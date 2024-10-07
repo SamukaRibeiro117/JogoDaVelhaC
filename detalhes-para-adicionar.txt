@@ -1,0 +1,19 @@
+Bom dia pessoal
+
+Para poder dividir um pouco o trabalho, resolvi deixar 2 funções para voces fazerem, quem quiser preencher, fica a vontade
+
+funcao 1: mostraTitulo()
+ - essa função tem como objetivo mostrar de tamanho grande o titulo do jogo (jogo da velha), como esse:
+------  ------  ------   ------
+    |   |    |  |     	 |    |
+    |   |    |  |   ---  |    |
+|   |   |    |  |    |   |    | 
+-----   ------  ------   ------
+
+ - Pode ser algo mais estilizado, mais complexo, só pesquisar na internet um jeito de fazer isso:
+
+funcao 2:mostraInstrucoes()
+ - Essa função tem como objetivo mostrar as instruções do jogo, no qual consiste em:
+ - um jogo da velha, onde se jogam com 2 jogadores, onde o jogador tem que digitar o numero da coluna e da linha que vai ser preenchido (de 1 à 3)
+ - os turnos do jogadores são alternados
+ - podem explicar o que causa uma vitória

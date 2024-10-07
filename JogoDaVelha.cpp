@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+void mostraTitulo();
+void mostraInstrucoes();
 void iniciar(int quadro[][3]);
 char preencheBloco(int quadro);
 void montaTabuleiro(int quadro[][3]);
@@ -15,6 +17,8 @@ int main(){
     int contador = 0,jogador1=0,jogador2=0,resultado;
     do
     {
+        mostraTitulo();
+        mostraInstrucoes();
         iniciar(quadro);
         resultado = jogo(quadro);
         montaTabuleiro(quadro);
@@ -26,6 +30,18 @@ int main(){
     } while (contador);    
     cout<<"\n Fim de jogo"<<endl;
     return 0;
+}
+
+//funcao que mostra o titulo do jogo
+void mostraTitulo(){
+    //colque o titulo nessa funcao
+    // cout<<"Titulo"<<endl;//pode utilizar essa funcao
+}
+
+//funcao que mostra as instrucoes do jogo
+void mostraInstrucoes(){
+    //coloque as instrucoes nesta funcao
+    // cout<<"Instrucoes"<<endl;//pode utilizar essa funcao
 }
 
 //inicia o tabuleiro colocando 0 em todas as casas
