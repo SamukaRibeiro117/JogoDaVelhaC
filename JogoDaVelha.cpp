@@ -11,6 +11,8 @@ int checaContinue(int *quadro[3]);
 int checaVitoria(int *quadro[3]);
 int jogo(int quadro[][3]); 
 void placar(int,int &, int &);
+int jogarNovamente();
+void mostraFinal();
 
 int main(){
     int quadro [3][3];
@@ -23,12 +25,9 @@ int main(){
         resultado = jogo(quadro);
         montaTabuleiro(quadro);
         placar(resultado,jogador1,jogador2);
-        cout<<"\n Deseja jogar novamente?"<<endl;
-        cout<<"0- Nao"<<endl;
-        cout<<"1- Jogar novamente"<<endl;
-        cin >> contador;
-    } while (contador);    
-    cout<<"\n Fim de jogo"<<endl;
+        contador = jogarNovamente();
+    } while (contador);
+    mostraFinal();    
     return 0;
 }
 
@@ -41,7 +40,11 @@ void mostraTitulo(){
 //funcao que mostra as instrucoes do jogo
 void mostraInstrucoes(){
     //coloque as instrucoes nesta funcao
-    // cout<<"Instrucoes"<<endl;//pode utilizar essa funcao
+    // int mostrarTutorial; 
+    // cin>>mostrarTutorial;
+    // if(mostrarTutorial ==1){ //inserir um if para ter opcao de mostrar tutorial ou nao
+    //      // cout<<"Instrucoes"<<endl;//pode utilizar essa funcao
+    // }
 }
 
 //inicia o tabuleiro colocando 0 em todas as casas
@@ -72,6 +75,7 @@ void montaTabuleiro(int quadro[][3]){
     cout<<endl;
     for (int linha = 0; linha < 3; linha++)
     {
+        //talvez apagar as linhas anteriores quando for preencher um novo quadro
         cout<<" "<< preencheBloco(quadro[linha][0]) <<" |";
         cout<<" "<< preencheBloco(quadro[linha][1]) <<" |";
         cout<<" "<< preencheBloco(quadro[linha][2]) <<endl;
@@ -175,7 +179,7 @@ int checaVitoria(int quadro[][3]){
     return 0;
 }
 
-//funcao que realiza o jogo
+//funcao que realiza o jogo, juntando as funcoes de jogo aqui
 int jogo(int quadro[][3]){
     int turno =0, continuar, vitoria;
    do
@@ -211,6 +215,20 @@ void placar(int resultado, int &jogador1,int &jogador2){
     }
     cout<<"Placar: "<<endl;
     cout<<"Jogador 1| "<<jogador1<<" X "<<jogador2<<" |Jogador 2"<<endl;
+}
+
+int jogarNovamente(){
+    int contador;
+    cout<<"\n Deseja jogar novamente?"<<endl;
+    cout<<"0- Nao"<<endl;
+    cout<<"1- Jogar novamente"<<endl;
+    cin >> contador;
+    return contador;
+}
+
+//funcao que mostra mensagem final ao fechar o jogo
+void mostraFinal(){
+    // cout<<"\n Fim de jogo"<<endl; //mensagem desse tipo ou mais estilizada
 }
 
 

@@ -4,11 +4,11 @@ Para poder dividir um pouco o trabalho, resolvi deixar 2 funções para voces fa
 
 funcao 1: mostraTitulo()
  - essa função tem como objetivo mostrar de tamanho grande o titulo do jogo (jogo da velha), como esse:
-------  ------  ------   ------
-    |   |    |  |     	 |    |
-    |   |    |  |   ---  |    |
-|   |   |    |  |    |   |    | 
------   ------  ------   ------
+=====  ======  ======    =======
+   ||  ||  ||  ||     	 ||   ||
+   ||  ||  ||  ||  ===   ||   ||
+|| ||  ||  ||  ||   ||   ||   || 
+=====  ======  =======   =======
 
  - Pode ser algo mais estilizado, mais complexo, só pesquisar na internet um jeito de fazer isso:
 
@@ -17,3 +17,14 @@ funcao 2:mostraInstrucoes()
  - um jogo da velha, onde se jogam com 2 jogadores, onde o jogador tem que digitar o numero da coluna e da linha que vai ser preenchido (de 1 à 3)
  - os turnos do jogadores são alternados
  - podem explicar o que causa uma vitória
+ - adicionar uma mensagem se quer mostrar o tutorial (1) ou nao (0)
+ - se sim (1), faz um if que mostra o tutorial, se não (0), pula o tutorial
+
+funcao 3: mostraFinal()
+ - semelhante a funcao mostraTitulo, apenas mostrar uma mensagem de fim de jogo, após ser fechado, de forma mais estilizada.
+
+
+Desafio 1 (se tivermos tempo livre):
+ - Modo singleplayer, onde jogaremos contra o pc, escolhendo posicao aleatoria
+Desafio 2:
+ - Integrar o modo singleplayer e multiplayer no mesmo jogo
