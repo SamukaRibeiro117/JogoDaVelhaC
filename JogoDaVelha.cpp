@@ -1,5 +1,4 @@
-#include<iostream>
-using namespace std;
+#include<stdio.h>
 
 void mostraTitulo();
 void mostraInstrucoes();
@@ -34,16 +33,16 @@ int main(){
 //funcao que mostra o titulo do jogo
 void mostraTitulo(){
     //colque o titulo nessa funcao
-    // cout<<"Titulo"<<endl;//pode utilizar essa funcao
+    // printf("Titulo");//pode utilizar essa funcao
 }
 
 //funcao que mostra as instrucoes do jogo
 void mostraInstrucoes(){
     //coloque as instrucoes nesta funcao
     // int mostrarTutorial; 
-    // cin>>mostrarTutorial;
+    // scanf("%d",&mostrarTutorial);
     // if(mostrarTutorial ==1){ //inserir um if para ter opcao de mostrar tutorial ou nao
-    //      // cout<<"Instrucoes"<<endl;//pode utilizar essa funcao
+        //  printf("Instrucoes");//pode utilizar essa funcao
     // }
 }
 
@@ -72,16 +71,14 @@ char preencheBloco(int bloco){
 
 //monta o tabuleiro todo
 void montaTabuleiro(int quadro[][3]){
-    cout<<endl;
     for (int linha = 0; linha < 3; linha++)
     {
         //talvez apagar as linhas anteriores quando for preencher um novo quadro
-        cout<<" "<< preencheBloco(quadro[linha][0]) <<" |";
-        cout<<" "<< preencheBloco(quadro[linha][1]) <<" |";
-        cout<<" "<< preencheBloco(quadro[linha][2]) <<endl;
+        printf("\n %c | %c | %c \n",preencheBloco(quadro[linha][0]),
+            preencheBloco(quadro[linha][1]),preencheBloco(quadro[linha][2]));
         if (linha!=2)
         {
-            cout<<"___ ___ ___\n"<<endl;
+            printf("___ ___ ___\n");
         }   
     }   
 }
@@ -91,14 +88,14 @@ void realizaMovimento(int quadro[][3], int jogador){
     int linha, coluna, checa;
     do
     {
-        cout<<"Linha: ";
-    cin>>linha;
-    cout<<"Coluna: ";
-    cin>>coluna;
+    printf("Linha: ");
+    scanf("%d",&linha);
+    printf("Coluna: ");
+    scanf("%d",&coluna);
     linha--;coluna--;
     checa = quadro[linha][coluna] || linha<0 || linha>2 || coluna<0 || coluna>2;
     if(checa){
-        cout<<"Essa casa nao esta vazia ou esta fora do intervalo 3x3"<<endl;
+        printf("Essa casa nao esta vazia ou esta fora do intervalo 3x3\n");
     }
     } while (checa);
     if (jogador==0)
@@ -185,21 +182,21 @@ int jogo(int quadro[][3]){
    do
    {
         montaTabuleiro(quadro);
-        cout<<"Vez do Jogador "<<1+turno%2<<endl;
+        printf("Vez do Jogador %d\n",turno%2+1);
         realizaMovimento(quadro,turno%2);
         turno++;
         continuar = checaContinue(quadro);
         vitoria = checaVitoria(quadro);
    } while (continuar && !vitoria);
     if(vitoria==1){
-        cout<<"Jogador 1 ganhou!!!\n"<<endl;
+        printf("Jogador 1 ganhou!!!\n");
         return 1;
     } else if (vitoria==-1)
     {
-        cout<<"Jogador 2 ganhou!!!\n"<<endl;
+        printf("Jogador 2 ganhou!!!\n");
         return 2;
     } else{
-        cout<<"Empate\n"<<endl;
+        printf("Empate\n");
     }
     return 0;
 }
@@ -213,22 +210,21 @@ void placar(int resultado, int &jogador1,int &jogador2){
     {
         jogador2++;
     }
-    cout<<"Placar: "<<endl;
-    cout<<"Jogador 1| "<<jogador1<<" X "<<jogador2<<" |Jogador 2"<<endl;
+    printf("Placar: Jogador 1| %d X %d |Jogador 2",jogador1,jogador2);
 }
 
 int jogarNovamente(){
     int contador;
-    cout<<"\n Deseja jogar novamente?"<<endl;
-    cout<<"0- Nao"<<endl;
-    cout<<"1- Jogar novamente"<<endl;
-    cin >> contador;
+    printf("\nDeseja jogar novamente?\n");
+    printf("0- Nao\n");
+    printf("1- Jogar novamente ");
+    scanf("%d",&contador);
     return contador;
 }
 
 //funcao que mostra mensagem final ao fechar o jogo
 void mostraFinal(){
-    // cout<<"\n Fim de jogo"<<endl; //mensagem desse tipo ou mais estilizada
+    // printf("\nFim de jogo"); //mensagem desse tipo ou mais estilizada
 }
 
 
