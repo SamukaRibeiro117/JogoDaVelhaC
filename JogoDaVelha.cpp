@@ -57,7 +57,6 @@ void mostraInstrucoes(){
     printf("===================================\n");
    }
 
-}
 
 //inicia o tabuleiro colocando 0 em todas as casas
 void iniciar(int quadro[][3]){
